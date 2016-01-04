@@ -40,7 +40,6 @@ This plugin support for enter and leave events. By default `.env` is used for en
 
 ### .env
 ```sh
-nvm use node
 OLDPATH=$PATH
 export PATH=`pwd`/node_modules/.bin:$PATH
 
@@ -48,7 +47,6 @@ export PATH=`pwd`/node_modules/.bin:$PATH
 
 ### .out
 ```sh
-nvm use system
 export PATH=$OLDPATH
 
 ```
