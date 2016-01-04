@@ -44,22 +44,22 @@ autoenv_init(){
 check_and_run(){
     if [[ $COLORS == true ]]
     then
-        echo -e "\e[32m> \e[31mWARNING\e[0m"
-        echo -e "\e[32m> \e[34mThis is the first time you are about to source \e[33m\"\e[31m$1\e[33m\"\e[0m"
+        echo -e "\x1b[32m> \x1b[31mWARNING\x1b[0m"
+        echo -e "\x1b[32m> \x1b[34mThis is the first time you are about to source \x1b[33m\"\x1b[31m$1\x1b[33m\"\x1b[0m"
         echo
-        echo -e "\e[32m--------------------------------------------------------------------------------\e[0m"
+        echo -e "\x1b[32m--------------------------------------------------------------------------------\x1b[0m"
         if hash pygmentize 2>/dev/null
         then
             echo
             `whence pygmentize` -f 256 -l shell -g "$1"
         else
-            echo -e "\e[32m"
+            echo -e "\x1b[32m"
             cat $1
         fi
         echo
-        echo -e "\e[32m--------------------------------------------------------------------------------\e[0m"
+        echo -e "\x1b[32m--------------------------------------------------------------------------------\x1b[0m"
         echo
-        echo -ne "\e[34mAre you sure you want to allow this? \e[36m(\e[32my\e[36m/\e[31mN\e[36m) \e[0m"
+        echo -ne "\x1b[34mAre you sure you want to allow this? \x1b[36m(\x1b[32my\x1b[36m/\x1b[31mN\x1b[36m) \x1b[0m"
     else
         echo "> WARNING"
         echo "> This is the first time you are about to source \"$1\""
