@@ -47,7 +47,10 @@ export PATH=`pwd`/node_modules/.bin:$PATH
 
 ### .out
 ```sh
-export PATH=$OLDPATH
+if [ -n "$OLDPATH" ]; then
+    export PATH=$OLDPATH
+    unset OLDPATH
+fi
 
 ```
 
